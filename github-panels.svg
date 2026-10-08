@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 236" width="1200" height="236" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace" role="img" aria-label="Experience log and skills directory listing">
+<defs>
+<linearGradient id="name" gradientUnits="userSpaceOnUse" x1="30" y1="0" x2="742" y2="0"><stop offset="0" stop-color="#f7dbe1"/><stop offset=".55" stop-color="#e9a9b9"/><stop offset="1" stop-color="#c9788d"/></linearGradient>
+<linearGradient id="petal" x1=".5" y1="1" x2=".5" y2="0"><stop offset="0" stop-color="#c9788d"/><stop offset=".45" stop-color="#e9a9b9"/><stop offset="1" stop-color="#f7dbe1"/></linearGradient>
+<radialGradient id="vignette" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></radialGradient>
+<filter id="smoke" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.011" numOctaves="4" seed="11"/><feColorMatrix values="0 0 0 0 .74  0 0 0 0 .62  0 0 0 0 .68  1.9 0 0 0 -.8"/><feGaussianBlur stdDeviation="5"/></filter>
+<filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 .92  0 0 0 0 .85  0 0 0 .55 -.2"/></filter>
+<filter id="glow" x="-5%" y="-30%" width="110%" height="160%"><feGaussianBlur stdDeviation="2.2"/></filter>
+<g id="blossom"><path d="M0 0C-6 -5 -7.5 -13 -2 -16.5L0 -14.5L2 -16.5C7.5 -13 6 -5 0 0Z" fill="url(#petal)" transform="rotate(0)"/><path d="M0 0C-6 -5 -7.5 -13 -2 -16.5L0 -14.5L2 -16.5C7.5 -13 6 -5 0 0Z" fill="url(#petal)" transform="rotate(72)"/><path d="M0 0C-6 -5 -7.5 -13 -2 -16.5L0 -14.5L2 -16.5C7.5 -13 6 -5 0 0Z" fill="url(#petal)" transform="rotate(144)"/><path d="M0 0C-6 -5 -7.5 -13 -2 -16.5L0 -14.5L2 -16.5C7.5 -13 6 -5 0 0Z" fill="url(#petal)" transform="rotate(216)"/><path d="M0 0C-6 -5 -7.5 -13 -2 -16.5L0 -14.5L2 -16.5C7.5 -13 6 -5 0 0Z" fill="url(#petal)" transform="rotate(288)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(18)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(18)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(63)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(63)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(108)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(108)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(153)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(153)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(198)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(198)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(243)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(243)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(288)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(288)"/><path d="M0 0L0 -6.5" stroke="#d6b583" stroke-width=".6" transform="rotate(333)"/><circle cx="0" cy="-6.5" r=".9" fill="#d6b583" transform="rotate(333)"/><circle r="1.8" fill="#c9788d"/></g>
+<path id="loose" d="M0 0C-6 -5 -7.5 -13 -2 -16.5L0 -14.5L2 -16.5C7.5 -13 6 -5 0 0Z" fill="url(#petal)"/>
+</defs>
+<rect width="1200" height="236" fill="#1b1618"/>
+<rect width="1200" height="236" fill="#1b1618" filter="url(#smoke)" opacity=".5"/>
+<rect width="1200" height="236" fill="url(#vignette)"/>
+<rect x="8" y="8" width="586" height="220" rx="8" fill="#1b1618" fill-opacity=".35" stroke="#c9788d" stroke-opacity=".7" stroke-width="1.5"/>
+<rect x="606" y="8" width="586" height="220" rx="8" fill="#1b1618" fill-opacity=".35" stroke="#c9788d" stroke-opacity=".7" stroke-width="1.5"/>
+<g fill="none" stroke="#5a4540" stroke-linecap="round"><path d="M1196 206C1160 196 1128 168 1100 128" stroke-width="3.6"/><path d="M1142 180C1118 184 1096 180 1076 190" stroke-width="2.2"/><path d="M1118 150C1128 124 1146 104 1162 84" stroke-width="2.2"/></g>
+<use xlink:href="#blossom" href="#blossom" transform="translate(1100 128) rotate(15) scale(1.2)"/>
+<use xlink:href="#blossom" href="#blossom" transform="translate(1076 190) rotate(50) scale(1.0)"/>
+<use xlink:href="#blossom" href="#blossom" transform="translate(1162 84) rotate(30) scale(1.05)"/>
+<use xlink:href="#blossom" href="#blossom" transform="translate(1140 118) rotate(5) scale(0.85)"/>
+<use xlink:href="#blossom" href="#blossom" transform="translate(1150 178) rotate(65) scale(0.9)"/>
+<circle cx="1092" cy="112" r="3.2" fill="#c9788d"/><circle cx="1092" cy="111" r="1.8" fill="#e9a9b9"/>
+<circle cx="1170" cy="70" r="3.2" fill="#c9788d"/><circle cx="1170" cy="69" r="1.8" fill="#e9a9b9"/>
+<circle cx="1062" cy="196" r="3.2" fill="#c9788d"/><circle cx="1062" cy="195" r="1.8" fill="#e9a9b9"/>
+<use xlink:href="#loose" href="#loose" opacity="0.6" transform="translate(1040 150) rotate(140) scale(0.7)"/>
+<use xlink:href="#loose" href="#loose" opacity="0.45" transform="translate(1010 204) rotate(250) scale(0.6)"/>
+<use xlink:href="#loose" href="#loose" opacity="0.6" transform="translate(540 196) rotate(120) scale(0.75)"/>
+<use xlink:href="#loose" href="#loose" opacity="0.4" transform="translate(562 96) rotate(30) scale(0.6)"/>
+<use xlink:href="#loose" href="#loose" opacity="0.35" transform="translate(500 150) rotate(220) scale(0.55)"/>
+<text x="28" y="40" font-size="14" fill="#ecdfd2" xml:space="preserve"><tspan fill="#a9b48c" font-weight="700">jonathan@gammill</tspan>:<tspan fill="#e9a9b9" font-weight="700">/var/log</tspan>$ cat experience.log</text>
+<text x="28" y="76" fill="#d6b583" font-size="14" font-weight="400" text-anchor="start" opacity="1">2026.06 - now</text>
+<text x="170" y="76" fill="#ecdfd2" font-size="14" font-weight="700" text-anchor="start" opacity="1">Asurepoint LLC</text>
+<text x="170" y="98" fill="#a9b48c" font-size="14" font-weight="400" text-anchor="start" opacity="1">IT Automation Specialist</text>
+<text x="28" y="126" fill="#d6b583" font-size="14" font-weight="400" text-anchor="start" opacity="1">2026.06 - now</text>
+<text x="170" y="126" fill="#ecdfd2" font-size="14" font-weight="700" text-anchor="start" opacity="1">Asurepoint LLC</text>
+<text x="170" y="148" fill="#a9b48c" font-size="14" font-weight="400" text-anchor="start" opacity="1">Application Developer</text>
+<text x="28" y="176" fill="#d6b583" font-size="14" font-weight="400" text-anchor="start" opacity="1">2024 summer</text>
+<text x="170" y="176" fill="#ecdfd2" font-size="14" font-weight="700" text-anchor="start" opacity="1">MS Dept. of Marine Resources</text>
+<text x="170" y="198" fill="#bba9a8" font-size="14" font-weight="400" text-anchor="start" opacity="1">IT Data Management Intern</text>
+<text x="626" y="40" font-size="14" fill="#ecdfd2" xml:space="preserve"><tspan fill="#a9b48c" font-weight="700">jonathan@gammill</tspan>:<tspan fill="#e9a9b9" font-weight="700">/usr</tspan>$ ls bin lib/forensics /mnt/cloud</text>
+<text x="626" y="76" fill="#e9a9b9" font-size="14" font-weight="700" text-anchor="start" opacity="1">bin:</text>
+<text x="626" y="98" fill="#a9b48c" font-size="14" font-weight="400" text-anchor="start" opacity="1">python  bash  powershell  c#  java  javascript</text>
+<text x="626" y="126" fill="#e9a9b9" font-size="14" font-weight="700" text-anchor="start" opacity="1">lib/forensics:</text>
+<text x="626" y="148" fill="#ecdfd2" font-size="14" font-weight="400" text-anchor="start" opacity="1">autopsy  ftk-imager  encase  wireshark  kali</text>
+<text x="626" y="176" fill="#e9a9b9" font-size="14" font-weight="700" text-anchor="start" opacity="1">/mnt/cloud:</text>
+<text x="626" y="198" fill="#d6b583" font-size="14" font-weight="400" text-anchor="start" opacity="1">aws  gcp  postgresql  mongodb</text>
+<rect width="1200" height="236" filter="url(#grain)" opacity=".5" pointer-events="none"/>
+</svg>
