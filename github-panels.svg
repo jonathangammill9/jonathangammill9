@@ -14,6 +14,7 @@
 <rect width="1200" height="236" fill="url(#vignette)"/>
 <rect x="8" y="8" width="586" height="220" rx="8" fill="#1b1618" fill-opacity=".35" stroke="#c9788d" stroke-opacity=".7" stroke-width="1.5"/>
 <rect x="606" y="8" width="586" height="220" rx="8" fill="#1b1618" fill-opacity=".35" stroke="#c9788d" stroke-opacity=".7" stroke-width="1.5"/>
+<g><animateTransform attributeName="transform" type="rotate" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.3;.65;1" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1" values="0 1196 206;1.3 1196 206;-.9 1196 206;0 1196 206"/>
 <g fill="none" stroke="#5a4540" stroke-linecap="round"><path d="M1196 206C1160 196 1128 168 1100 128" stroke-width="3.6"/><path d="M1142 180C1118 184 1096 180 1076 190" stroke-width="2.2"/><path d="M1118 150C1128 124 1146 104 1162 84" stroke-width="2.2"/></g>
 <use xlink:href="#blossom" href="#blossom" transform="translate(1100 128) rotate(15) scale(1.2)"/>
 <use xlink:href="#blossom" href="#blossom" transform="translate(1076 190) rotate(50) scale(1.0)"/>
@@ -23,11 +24,12 @@
 <circle cx="1092" cy="112" r="3.2" fill="#c9788d"/><circle cx="1092" cy="111" r="1.8" fill="#e9a9b9"/>
 <circle cx="1170" cy="70" r="3.2" fill="#c9788d"/><circle cx="1170" cy="69" r="1.8" fill="#e9a9b9"/>
 <circle cx="1062" cy="196" r="3.2" fill="#c9788d"/><circle cx="1062" cy="195" r="1.8" fill="#e9a9b9"/>
-<use xlink:href="#loose" href="#loose" opacity="0.6" transform="translate(1040 150) rotate(140) scale(0.7)"/>
-<use xlink:href="#loose" href="#loose" opacity="0.45" transform="translate(1010 204) rotate(250) scale(0.6)"/>
-<use xlink:href="#loose" href="#loose" opacity="0.6" transform="translate(540 196) rotate(120) scale(0.75)"/>
-<use xlink:href="#loose" href="#loose" opacity="0.4" transform="translate(562 96) rotate(30) scale(0.6)"/>
-<use xlink:href="#loose" href="#loose" opacity="0.35" transform="translate(500 150) rotate(220) scale(0.55)"/>
+</g>
+<g><animateTransform attributeName="transform" type="translate" dur="7.0s" begin="-0.0s" repeatCount="indefinite" values="-22 -52;-4 -26;-14 2;10 28;0 54;26 82"/><animate attributeName="opacity" dur="7.0s" begin="-0.0s" repeatCount="indefinite" keyTimes="0;.15;.75;1" values="0;1;1;0"/><g><animateTransform attributeName="transform" type="rotate" dur="4.2s" repeatCount="indefinite" values="-25 1040 150;35 1040 150;-25 1040 150"/><use xlink:href="#loose" href="#loose" opacity="0.6" transform="translate(1040 150) rotate(140) scale(0.7)"/></g></g>
+<g><animateTransform attributeName="transform" type="translate" dur="8.7s" begin="-2.3s" repeatCount="indefinite" values="-22 -52;-4 -26;-14 2;10 28;0 54;26 82"/><animate attributeName="opacity" dur="8.7s" begin="-2.3s" repeatCount="indefinite" keyTimes="0;.15;.75;1" values="0;1;1;0"/><g><animateTransform attributeName="transform" type="rotate" dur="5.2s" repeatCount="indefinite" values="-25 1010 204;35 1010 204;-25 1010 204"/><use xlink:href="#loose" href="#loose" opacity="0.45" transform="translate(1010 204) rotate(250) scale(0.6)"/></g></g>
+<g><animateTransform attributeName="transform" type="translate" dur="10.4s" begin="-4.6s" repeatCount="indefinite" values="-22 -52;-4 -26;-14 2;10 28;0 54;26 82"/><animate attributeName="opacity" dur="10.4s" begin="-4.6s" repeatCount="indefinite" keyTimes="0;.15;.75;1" values="0;1;1;0"/><g><animateTransform attributeName="transform" type="rotate" dur="6.2s" repeatCount="indefinite" values="-25 540 196;35 540 196;-25 540 196"/><use xlink:href="#loose" href="#loose" opacity="0.6" transform="translate(540 196) rotate(120) scale(0.75)"/></g></g>
+<g><animateTransform attributeName="transform" type="translate" dur="7.1s" begin="-6.9s" repeatCount="indefinite" values="-22 -52;-4 -26;-14 2;10 28;0 54;26 82"/><animate attributeName="opacity" dur="7.1s" begin="-6.9s" repeatCount="indefinite" keyTimes="0;.15;.75;1" values="0;1;1;0"/><g><animateTransform attributeName="transform" type="rotate" dur="4.3s" repeatCount="indefinite" values="-25 562 96;35 562 96;-25 562 96"/><use xlink:href="#loose" href="#loose" opacity="0.4" transform="translate(562 96) rotate(30) scale(0.6)"/></g></g>
+<g><animateTransform attributeName="transform" type="translate" dur="8.8s" begin="-0.4s" repeatCount="indefinite" values="-22 -52;-4 -26;-14 2;10 28;0 54;26 82"/><animate attributeName="opacity" dur="8.8s" begin="-0.4s" repeatCount="indefinite" keyTimes="0;.15;.75;1" values="0;1;1;0"/><g><animateTransform attributeName="transform" type="rotate" dur="5.3s" repeatCount="indefinite" values="-25 500 150;35 500 150;-25 500 150"/><use xlink:href="#loose" href="#loose" opacity="0.35" transform="translate(500 150) rotate(220) scale(0.55)"/></g></g>
 <text x="28" y="40" font-size="14" fill="#ecdfd2" xml:space="preserve"><tspan fill="#a9b48c" font-weight="700">jonathan@gammill</tspan>:<tspan fill="#e9a9b9" font-weight="700">/var/log</tspan>$ cat experience.log</text>
 <text x="28" y="76" fill="#d6b583" font-size="14" font-weight="400" text-anchor="start" opacity="1">2026.06 - now</text>
 <text x="170" y="76" fill="#ecdfd2" font-size="14" font-weight="700" text-anchor="start" opacity="1">Asurepoint LLC</text>

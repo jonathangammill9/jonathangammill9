@@ -1,4 +1,5 @@
 """Generates github-banner.svg and github-panels.svg.  Usage: python3 banner.py"""
+import random
 from xml.sax.saxutils import escape as e
 
 # Vintage cherry blossom over smoke
@@ -59,10 +60,21 @@ class Svg:
                 self.o.append(f'<circle cx="{x}" cy="{y}" r="3.2" fill="{ROSE}"/><circle cx="{x}" cy="{y - 1}" r="1.8" fill="{SAKURA}"/>')
             else:
                 self.o.append(f'<use xlink:href="#blossom" href="#blossom" transform="translate({x} {y}) rotate({rot}) scale({sc})"/>')
+    def sway(self, px, py, dur=7):
+        """Open a group that rocks gently about (px, py), like a branch in a breeze. Close with end()."""
+        self.o.append(f'<g><animateTransform attributeName="transform" type="rotate" dur="{dur}s" repeatCount="indefinite" calcMode="spline" '
+                      f'keyTimes="0;.3;.65;1" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1" values="0 {px} {py};1.3 {px} {py};-.9 {px} {py};0 {px} {py}"/>')
+    def end(self): self.o.append("</g>")
     def petals(self, items):
-        """items: (x, y, scale, rotation, opacity) — loose drifting petals."""
-        for x, y, sc, rot, op in items:
-            self.o.append(f'<use xlink:href="#loose" href="#loose" opacity="{op}" transform="translate({x} {y}) rotate({rot}) scale({sc})"/>')
+        """items: (x, y, scale, rotation, opacity) — loose petals that flutter down, fade out and loop.
+        Each is offset in time so they never fall in step; without animation they sit still."""
+        for i, (x, y, sc, rot, op) in enumerate(items):
+            dur = 7 + (i * 1.7) % 5
+            self.o.append(f'<g><animateTransform attributeName="transform" type="translate" dur="{dur:.1f}s" begin="-{(i * 2.3) % dur:.1f}s" repeatCount="indefinite" '
+                          f'values="-22 -52;-4 -26;-14 2;10 28;0 54;26 82"/>'
+                          f'<animate attributeName="opacity" dur="{dur:.1f}s" begin="-{(i * 2.3) % dur:.1f}s" repeatCount="indefinite" keyTimes="0;.15;.75;1" values="0;1;1;0"/>'
+                          f'<g><animateTransform attributeName="transform" type="rotate" dur="{dur * .6:.1f}s" repeatCount="indefinite" values="-25 {x} {y};35 {x} {y};-25 {x} {y}"/>'
+                          f'<use xlink:href="#loose" href="#loose" opacity="{op}" transform="translate({x} {y}) rotate({rot}) scale({sc})"/></g></g>')
     def raw(self, s): self.o.append(s)
     def save(self, path):
         grain = f'<rect width="{self.w}" height="{self.h}" filter="url(#grain)" opacity=".5" pointer-events="none"/>'
@@ -112,6 +124,7 @@ s = Svg(W, H, "Jonathan Gammill — IT Automation Specialist and Application Dev
 
 # cherry branch reaching in from the lower left, behind the terminal text
 s.raw('<g transform="translate(0 46)">')
+s.sway(-10, 392)
 s.branch([("M-10 392C90 376 170 340 280 342S440 374 548 352", 5),
           ("M150 354C176 328 208 320 236 308", 3),
           ("M330 345C370 324 408 324 442 314", 2.6),
@@ -121,6 +134,7 @@ s.blossoms([(236, 308, 1.15, 10), (198, 324, 0.9, 40), (280, 342, 1.3, 25), (150
             (442, 314, 1.1, 5), (392, 327, 0.85, 50), (548, 352, 1.25, 30), (478, 364, 0.95, 15),
             (532, 390, 0.9, 70), (104, 344, 1.05, 20), (40, 384, 1.2, 45),
             (252, 300, 0.3, 0), (458, 306, 0.3, 0), (320, 336, 0.3, 0), (566, 344, 0.3, 0), (118, 334, 0.3, 0)])
+s.end()
 s.petals([(612, 318, 0.9, 130, .85), (668, 356, 0.75, 215, .7), (718, 300, 0.7, 60, .6), (640, 388, 0.8, 300, .75),
           (742, 368, 0.6, 160, .5), (690, 262, 0.55, 20, .4), (590, 372, 0.6, 250, .6)])
 s.raw('</g>')
@@ -178,9 +192,29 @@ s.raw(f'<path d="{"".join(lines)}" fill="none" stroke="{OVERLAY}" stroke-width="
 s.t(800, 402, "$", SAGE, 14, 700); s.t(817, 402, "xxd -s 3 -l 8 /dev/sdb1", FG, 14)
 s.raw(f'<text x="800" y="423" font-size="13" fill="{OVERLAY}" xml:space="preserve">00000003: <tspan fill="{ROSE}">4e54 4653 2020 2020</tspan>  <tspan fill="{GOLD}" font-weight="700">NTFS</tspan></text>')
 
-# hex strip: the bytes spell the name
-for i, ch in enumerate("Jonathan Gammill"):
-    s.t(W - 26, 80 + i * 22.5, f"{ord(ch):02x}", ROSE, 12, anchor="end", opacity=round(1 - i * 0.055, 2))
+# hex strip: an endless carve through a byte stream, hunting for file headers and footers.
+# It opens with the bytes that spell the name, then real file signatures separated by filler.
+SIGNATURES = [("ff d8 ff e0", "ff d9"),                 # JPEG  SOI / EOI
+              ("89 50 4e 47", "ae 42 60 82"),           # PNG   magic / end of IEND
+              ("25 50 44 46", "25 25 45 4f 46"),        # PDF   %PDF / %%EOF
+              ("50 4b 03 04", "50 4b 05 06"),           # ZIP   local file header / end of central directory
+              ("47 49 46 38", "00 3b")]                 # GIF   GIF8 / trailer
+rng = random.Random(1010)
+filler = lambda n: [(f"{rng.randrange(256):02x}", OVERLAY, 400) for _ in range(n)]
+stream = [(f"{ord(ch):02x}", ROSE, 400) for ch in "Jonathan Gammill"] + filler(2)
+for head, foot in SIGNATURES:
+    stream += [(b, GOLD, 700) for b in head.split()] + filler(5) + [(b, SAGE, 700) for b in foot.split()] + filler(3)
+
+ROW, TOP, BOT, SPEED = 19, 62, 432, 2.0                 # row height, visible window, rows per second
+visible = (BOT - TOP) // ROW + 2
+cells = "".join(f'<text x="{W - 26}" y="{TOP + 16 + i * ROW}" fill="{col}" font-size="12" font-weight="{wt}" text-anchor="end">{b}</text>'
+                for i, (b, col, wt) in enumerate(stream + stream[:visible]))     # repeat the start so the loop is seamless
+s.raw(f'<defs><linearGradient id="hexfade" gradientUnits="userSpaceOnUse" x1="0" y1="{TOP}" x2="0" y2="{BOT}"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".12" stop-color="#fff"/><stop offset=".85" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+      f'<mask id="hexmask" maskUnits="userSpaceOnUse" x="{W - 60}" y="{TOP}" width="60" height="{BOT - TOP}"><rect x="{W - 60}" y="{TOP}" width="60" height="{BOT - TOP}" fill="url(#hexfade)"/></mask></defs>')
+s.raw(f'<g mask="url(#hexmask)"><g>{cells}<animateTransform attributeName="transform" type="translate" from="0 0" to="0 {-len(stream) * ROW}" dur="{len(stream) / SPEED:.1f}s" repeatCount="indefinite"/></g></g>')
+# the scan head: bytes pass through this fixed window as they are examined
+scan_y = TOP + 16 + 9 * ROW
+s.raw(f'<rect x="{W - 46}" y="{scan_y - 13}" width="26" height="18" rx="3" fill="none" stroke="{SAKURA}" stroke-width="1.2"><animate attributeName="stroke-opacity" values=".95;.35;.95" dur="1s" repeatCount="indefinite"/></rect>')
 s.save("github-banner.svg")
 
 # ---------------------------------------------------------------- lower panels
@@ -189,9 +223,11 @@ s = Svg(W, H, "Experience log and skills directory listing", seed=11)
 s.box(8, 8, 586, H - 16); s.box(606, 8, 586, H - 16)
 
 # sprig reaching in from the right edge of the skills panel
+s.sway(1196, 206, 8)
 s.branch([("M1196 206C1160 196 1128 168 1100 128", 3.6), ("M1142 180C1118 184 1096 180 1076 190", 2.2), ("M1118 150C1128 124 1146 104 1162 84", 2.2)])
 s.blossoms([(1100, 128, 1.2, 15), (1076, 190, 1.0, 50), (1162, 84, 1.05, 30), (1140, 118, 0.85, 5), (1150, 178, 0.9, 65),
             (1092, 112, 0.3, 0), (1170, 70, 0.3, 0), (1062, 196, 0.3, 0)])
+s.end()
 s.petals([(1040, 150, 0.7, 140, .6), (1010, 204, 0.6, 250, .45), (540, 196, 0.75, 120, .6), (562, 96, 0.6, 30, .4), (500, 150, 0.55, 220, .35)])
 
 s.prompt(28, 40, "cat experience.log", 14, "/var/log")
