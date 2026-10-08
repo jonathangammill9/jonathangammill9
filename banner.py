@@ -1,5 +1,7 @@
 """Generates github-banner.svg and github-panels.svg.  Usage: python3 banner.py"""
+import os
 import random
+import re
 from xml.sax.saxutils import escape as e
 
 # Vintage cherry blossom over smoke
@@ -247,3 +249,28 @@ for d, items, col in (("bin:", "python  bash  powershell  c#  java  javascript",
     s.t(626, y, d, SAKURA, 14, 700); s.t(626, y + 22, items, col, 14)
     y += 50
 s.save("github-panels.svg")
+
+# ---------------------------------------------------------------- link buttons
+# README images cannot contain links, so each button is its own small SVG that the README wraps in <a>.
+def button(path, key, label, accent):
+    cw, h = 9.6, 44                                   # 16px monospace advance, button height
+    tag_w = 40
+    w = round(tag_w + 16 + len(label) * cw + 18)
+    open(path, "w").write(
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" font-family="{FONT}" role="img" aria-label="{e(label)}">'
+        f'<rect x=".75" y=".75" width="{w - 1.5}" height="{h - 1.5}" rx="8" fill="{BG}" stroke="{accent}" stroke-width="1.5"/>'
+        f'<rect x="6" y="6" width="{tag_w}" height="{h - 12}" rx="5" fill="{accent}"/>'
+        f'<text x="{6 + tag_w / 2}" y="28" font-size="15" font-weight="700" fill="{BG}" text-anchor="middle">[{key}]</text>'
+        f'<text x="{tag_w + 18}" y="28" font-size="16" fill="{FG}">{e(label)}</text></svg>')
+
+button("btn-contact.svg", 1, "contact", SAKURA)
+button("btn-resume.svg", 2, "resume.pdf", GOLD)
+button("btn-linkedin.svg", 3, "linkedin", SAGE)
+button("btn-site.svg", 4, "site", ROSE)
+
+# ---------------------------------------------------------------- site copy
+# The site paints this same smoke across the whole page (site/bg.svg), so its copy of the banner
+# drops the full-size background, smoke, vignette and grain layers and sits on the page seamlessly.
+if os.path.isdir("site"):
+    hero = open("github-banner.svg").read()
+    open("site/github-banner.svg", "w").write(re.sub(r'<rect width="1200" height="446"[^>]*/>\n?', "", hero))

@@ -2,6 +2,12 @@
   <img src="./github-banner.svg" alt="Jonathan Gammill — IT Automation Specialist and Application Developer at Asurepoint LLC" width="100%">
 </p>
 <p align="center">
+  <a href="mailto:jonathan.gammill9@gmail.com"><img src="./btn-contact.svg" alt="[1] contact" height="44"></a>
+  <a href="https://jonathangammill9.github.io/resume.pdf"><img src="./btn-resume.svg" alt="[2] resume.pdf" height="44"></a>
+  <a href="https://www.linkedin.com/in/jonathan-gammill-69130a293"><img src="./btn-linkedin.svg" alt="[3] linkedin" height="44"></a>
+  <a href="https://jonathangammill9.github.io/"><img src="./btn-site.svg" alt="[4] site" height="44"></a>
+</p>
+<p align="center">
   <img src="./github-panels.svg" alt="Experience log and skills directory listing" width="100%">
 </p>
 
