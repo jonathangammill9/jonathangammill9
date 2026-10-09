@@ -147,7 +147,7 @@ s.box(8, 8, W - 16, 38)
 s.raw(f'<rect x="18" y="16" width="38" height="22" rx="5" fill="{SAKURA}"/>')
 s.t(37, 32, "[0]", BG, 14, 700, "middle"); s.t(74, 32, f"{USER}: /", SUB)
 s.raw(f'<text x="{W / 2}" y="32" font-size="15" text-anchor="middle"><tspan fill="{SAGE}">AUTOMATION</tspan><tspan fill="{OVERLAY}"> | </tspan><tspan fill="{GOLD}">APP DEV</tspan><tspan fill="{OVERLAY}"> | </tspan><tspan fill="{SAKURA}">DIGITAL FORENSICS</tspan></text>')
-s.t(W - 26, 32, "Ocean Springs, MS", SUB, anchor="end")
+s.t(W - 26, 32, "Plano, TX", SUB, anchor="end")
 
 s.prompt(30, 88, "whoami")
 ascii_art(s, NAME_ART, 30, 108, 5.35, 11.5)
