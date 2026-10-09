@@ -268,7 +268,7 @@ def button(path, key, label, accent):
 button("btn-resume.svg", 1, "resume.pdf", GOLD)
 button("btn-linkedin.svg", 2, "linkedin", SAGE)
 button("btn-contact.svg", 3, "contact", SAKURA)
-button("btn-site.svg", 4, "site", ROSE)
+button("btn-site.svg", 4, "rice site", ROSE)
 
 # ---------------------------------------------------------------- site copy
 # The site paints this same smoke across the whole page (site/bg.svg), so its copy of the banner
