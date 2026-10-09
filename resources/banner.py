@@ -1,10 +1,10 @@
-"""Generates the banner, panels and link buttons next to this file.  Usage: python3 assets/banner.py"""
+"""Generates the banner, panels and link buttons next to this file.  Usage: python3 resources/banner.py"""
 import os
 import random
 import re
 from xml.sax.saxutils import escape as e
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))      # outputs always land in assets/, wherever this is run from
+os.chdir(os.path.dirname(os.path.abspath(__file__)))      # outputs always land in resources/, wherever this is run from
 
 # Vintage cherry blossom over smoke
 BG, SURFACE, OVERLAY, SUB, FG = "#1b1618", "#3b2e33", "#86737a", "#bba9a8", "#ecdfd2"
