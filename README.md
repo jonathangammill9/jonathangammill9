@@ -29,6 +29,11 @@
 - Gathered statistical data and organized legal records from archived case files.
 - Produced geospatial maps from satellite imagery and state site data using ArcGIS software.
 
+**Plumbing Apprentice, H&H Plumbing** (2019-2022)
+- Installed piping systems (PVC, copper, PEX, cast iron) and fixtures including toilets, sinks, faucets, and water heaters.
+- Secured and prepared pipes for cutting, threading, and soldering, and applied sealants, tape, and fittings.
+- Tested systems for leaks and proper pressure to ensure code compliance and reliability.
+
 ### `$ ls -la /opt`
 
 | project | what | stack |

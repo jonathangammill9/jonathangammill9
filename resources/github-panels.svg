@@ -39,7 +39,7 @@
 <text x="170" y="148" fill="#a9b48c" font-size="14" font-weight="400" text-anchor="start" opacity="1">Application Developer</text>
 <text x="28" y="176" fill="#d6b583" font-size="14" font-weight="400" text-anchor="start" opacity="1">2024 summer</text>
 <text x="170" y="176" fill="#ecdfd2" font-size="14" font-weight="700" text-anchor="start" opacity="1">MS Dept. of Marine Resources</text>
-<text x="170" y="198" fill="#bba9a8" font-size="14" font-weight="400" text-anchor="start" opacity="1">IT Data Management Intern</text>
+<text x="170" y="198" fill="#a9b48c" font-size="14" font-weight="400" text-anchor="start" opacity="1">IT Data Management Intern</text>
 <text x="626" y="40" font-size="14" fill="#ecdfd2" xml:space="preserve"><tspan fill="#a9b48c" font-weight="700">jonathan@gammill</tspan>:<tspan fill="#e9a9b9" font-weight="700">/usr</tspan>$ ls bin lib/forensics /mnt/cloud</text>
 <text x="626" y="76" fill="#e9a9b9" font-size="14" font-weight="700" text-anchor="start" opacity="1">bin:</text>
 <text x="626" y="98" fill="#a9b48c" font-size="14" font-weight="400" text-anchor="start" opacity="1">python  bash  powershell  c#  java  javascript</text>

@@ -240,7 +240,7 @@ for when, org, role in (("2026.06 - now", "Asurepoint LLC", "IT Automation Speci
                         ("2026.06 - now", "Asurepoint LLC", "Application Developer"),
                         ("2024 summer", "MS Dept. of Marine Resources", "IT Data Management Intern")):
     now = when.endswith("now")
-    s.t(28, y, when, GOLD, 14); s.t(170, y, org, FG, 14, 700); s.t(170, y + 22, role, SAGE if now else SUB, 14)
+    s.t(28, y, when, GOLD, 14); s.t(170, y, org, FG, 14, 700); s.t(170, y + 22, role, SAGE, 14)
     y += 50
 
 s.prompt(626, 40, "ls bin lib/forensics /mnt/cloud", 14, "/usr")
