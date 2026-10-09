@@ -265,9 +265,9 @@ def button(path, key, label, accent):
         f'<text x="{6 + tag_w / 2}" y="28" font-size="15" font-weight="700" fill="{BG}" text-anchor="middle">[{key}]</text>'
         f'<text x="{tag_w + 18}" y="28" font-size="16" fill="{FG}">{e(label)}</text></svg>')
 
-button("btn-contact.svg", 1, "contact", SAKURA)
-button("btn-resume.svg", 2, "resume.pdf", GOLD)
-button("btn-linkedin.svg", 3, "linkedin", SAGE)
+button("btn-resume.svg", 1, "resume.pdf", GOLD)
+button("btn-linkedin.svg", 2, "linkedin", SAGE)
+button("btn-contact.svg", 3, "contact", SAKURA)
 button("btn-site.svg", 4, "site", ROSE)
 
 # ---------------------------------------------------------------- site copy
