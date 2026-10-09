@@ -265,10 +265,12 @@ def button(path, key, label, accent):
         f'<text x="{6 + tag_w / 2}" y="28" font-size="15" font-weight="700" fill="{BG}" text-anchor="middle">[{key}]</text>'
         f'<text x="{tag_w + 18}" y="28" font-size="16" fill="{FG}">{e(label)}</text></svg>')
 
-button("btn-resume.svg", 1, "resume.pdf", GOLD)
-button("btn-linkedin.svg", 2, "linkedin", SAGE)
-button("btn-contact.svg", 3, "contact", SAKURA)
-button("btn-site.svg", 4, "rice site", ROSE)
+# Neutral file names on purpose: ad and tracker blockers hide images whose names mention
+# things like "linkedin" or "contact", which made those two buttons vanish for some viewers.
+button("link-1.svg", 1, "resume.pdf", GOLD)
+button("link-2.svg", 2, "linkedin", SAGE)
+button("link-3.svg", 3, "contact", SAKURA)
+button("link-4.svg", 4, "rice site", ROSE)
 
 # ---------------------------------------------------------------- site copy
 # The site paints this same smoke across the whole page (site/bg.svg), so its copy of the banner

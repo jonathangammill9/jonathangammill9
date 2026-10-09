@@ -2,10 +2,10 @@
   <img src="./resources/github-banner.svg" alt="Jonathan Gammill — IT Automation Specialist and Application Developer at Asurepoint LLC" width="100%">
 </p>
 <p align="center">
-  <a href="https://jonathangammill9.github.io/resume.pdf"><img src="./resources/btn-resume.svg" alt="[1] resume.pdf" height="44"></a>
-  <a href="https://www.linkedin.com/in/jonathan-gammill-69130a293"><img src="./resources/btn-linkedin.svg" alt="[2] linkedin" height="44"></a>
-  <a href="mailto:jonathan.gammill9@gmail.com"><img src="./resources/btn-contact.svg" alt="[3] contact" height="44"></a>
-  <a href="https://jonathangammill9.github.io/"><img src="./resources/btn-site.svg" alt="[4] rice site" height="44"></a>
+  <a href="https://jonathangammill9.github.io/resume.pdf"><img src="./resources/link-1.svg" alt="[1] resume.pdf" height="44"></a>
+  <a href="https://www.linkedin.com/in/jonathan-gammill-69130a293"><img src="./resources/link-2.svg" alt="[2] linkedin" height="44"></a>
+  <a href="mailto:jonathan.gammill9@gmail.com"><img src="./resources/link-3.svg" alt="[3] contact" height="44"></a>
+  <a href="https://jonathangammill9.github.io/"><img src="./resources/link-4.svg" alt="[4] rice site" height="44"></a>
 </p>
 <p align="center">
   <img src="./resources/github-panels.svg" alt="Experience log and skills directory listing" width="100%">
