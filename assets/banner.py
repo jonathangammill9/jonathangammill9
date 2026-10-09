@@ -1,8 +1,10 @@
-"""Generates github-banner.svg and github-panels.svg.  Usage: python3 banner.py"""
+"""Generates the banner, panels and link buttons next to this file.  Usage: python3 assets/banner.py"""
 import os
 import random
 import re
 from xml.sax.saxutils import escape as e
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))      # outputs always land in assets/, wherever this is run from
 
 # Vintage cherry blossom over smoke
 BG, SURFACE, OVERLAY, SUB, FG = "#1b1618", "#3b2e33", "#86737a", "#bba9a8", "#ecdfd2"
@@ -271,6 +273,6 @@ button("btn-site.svg", 4, "site", ROSE)
 # ---------------------------------------------------------------- site copy
 # The site paints this same smoke across the whole page (site/bg.svg), so its copy of the banner
 # drops the full-size background, smoke, vignette and grain layers and sits on the page seamlessly.
-if os.path.isdir("site"):
+if os.path.isdir("../site"):
     hero = open("github-banner.svg").read()
-    open("site/github-banner.svg", "w").write(re.sub(r'<rect width="1200" height="446"[^>]*/>\n?', "", hero))
+    open("../site/github-banner.svg", "w").write(re.sub(r'<rect width="1200" height="446"[^>]*/>\n?', "", hero))
